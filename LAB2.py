@@ -1,41 +1,29 @@
 from datetime import date
 
-korisnik = {}
+kolegij = {}
 
-korisnik["ime"] = input("Unesite ime korisnika: ").title()
-korisnik["prezime"] = input("Unesite prezime korisnika: ").title()
-korisnik["telefon"] = int(input("Unesite telefon korisnika: "))
-korisnik["email"] = input("Unesite email korisnika: ").strip()
+kolegij["ime"] = input("Unesite ime kolegija: ").upper()
+kolegij["bodovi"] = int(input("Unesite ECTS bodove za kolegij: "))
+
+ispit = {}
+
+ispit["kolegij"] = kolegij
 
 
-artikl = {}
+dan = int(input("Unesite dan: "))
+mjesec = int(input("Unesite mjesec: "))
+godina = int(input("Unesite godinu: "))
 
-artikl["naslov"] = input("Unesite naslov artikla: ").title()
-artikl["opis"] = input("Unesite opis artikla: ")
-artikl["cijena"] = float(input("Unesite cijenu artikla: "))
+ispit["datum"] = date(godina, mjesec, dan)
 
-prodaja = {}
+student = {}
 
-dan = int(input("Unesite dan isteka prodaje: "))
-mjesec = int(input("Unesite mjesec isteka prodaje: "))
-godina = int(input("Unesite godinu isteka prodaje: "))
+student["ispit"] = ispit
 
-prodaja["datum"] = date(godina, mjesec, dan)
-prodaja["artikl"] = artikl
-prodaja["korisnik"] = korisnik
 
-print("Informacije o artiklu: ")
-print("\t Naslov: ", prodaja["artikl"]["naslov"])
-print("\t Opis: ", prodaja["artikl"]["opis"])
-print("\t Cijena: ", prodaja["artikl"]["cijena"])
+student["ime"] = input("Unesite ime studenta: ").title()
+student["prezime"] = input("Unesite prezime studenta: ").title()
 
-print("Datum isteka prodaje: ")
-print("\t Dan: ", prodaja["datum"].day)
-print("\t Mjesec: ", prodaja["datum"].month)
-print("\t Godina: ", prodaja["datum"].year)
-
-print("Informacije o korisniku: ")
-print("\t", prodaja["korisnik"]["ime"], prodaja["korisnik"]["prezime"])
-print("\t Telefon: ", prodaja["korisnik"]["telefon"])
-print("\t Email: ", prodaja["korisnik"]["email"])
+print("Student", student["ime"], student["prezime"])
+print("je prijavio ispit iz kolegija", student["ispit"]["kolegij"]["ime"], "koji će se održati datuma: ", student["ispit"]["datum"])
 
