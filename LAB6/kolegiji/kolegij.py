@@ -20,4 +20,4 @@ class Kolegij:
         self.__ECTS=ECTS
 
     def ispis(self):
-        print(f"Kolegij {self.ime} nosi {self.ECTS} ECTS bododva")
+        print(f"Kolegij {self.__ime} nosi {self.__ECTS} ECTS bododva")

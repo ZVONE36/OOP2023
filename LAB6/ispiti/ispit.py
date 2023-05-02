@@ -15,9 +15,5 @@ class Ispit:
     def datum(self):
         return self.__datum
 
-    @datum.setter
-    def datum(self, datum):
-        self.__datum=datum
-
     def ispis(self):
-        print(f"Ispit iz kolegija {self.kolegij}, koji nosi {self.datum} ECTS bododva")
+        print(f"Ispit iz kolegija {self.__kolegij.ime}, koji ce se odrzati {self.__datum}.")
